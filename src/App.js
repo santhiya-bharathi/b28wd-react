@@ -126,18 +126,18 @@ const addMovie =()=>{
 <div className="in-con">
 
 <TextField value={pic} 
-      onChange={(event)=>setPic(event.target.value)} id="outlined-basic" label="enter movie url" variant="outlined" />
+      onChange={(event)=>setPic(event.target.value)}  label="enter movie url" variant="filled" />
      
      <TextField value={name}
-      onChange={(event)=>setName(event.target.value)} id="outlined-basic" label="enter movie name" variant="outlined" />
+      onChange={(event)=>setName(event.target.value)} label="enter movie name" variant="filled" />
 
       <TextField value={rating}
-      onChange={(event)=>setRating(event.target.value)} id="outlined-basic" label="enter movie rating" variant="outlined" />
+      onChange={(event)=>setRating(event.target.value)}  label="enter movie rating" variant="filled" />
 
       <TextField value={summary}
-      onChange={(event)=>setSummary(event.target.value)} id="outlined-basic" label="enter movie summary" variant="outlined" />
+      onChange={(event)=>setSummary(event.target.value)}  label="enter movie summary" variant="filled" />
     
-      <Button onClick={addMovie} variant="outlined">Add movies</Button>
+      <Button onClick={addMovie} variant="contained">Add movies</Button>
      
     </div>
   );
