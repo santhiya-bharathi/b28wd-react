@@ -6,6 +6,17 @@ body{
  background: rgb(210, 231, 240);
   min-height: 100vh;
 }
+.not-found-name{
+  text-align: center;
+  color: teal;
+}
+.not-found-pic{
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
 .ul-list{
   list-style: none;
 }
@@ -33,7 +44,7 @@ margin: 15px;
 }
 
 .full-det{
- 
+  border-radius: 5px;
   width: 400px;
   overflow: hidden;
   font-family: sans-serif;
@@ -44,7 +55,7 @@ margin: 15px;
 }
 .button-like{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .details{
@@ -64,22 +75,30 @@ margin: 15px;
 transform: scale(1.1);
 box-shadow: 5px 5px 5px rgb(46, 45, 45);
 }
+.home-hello{
+  margin: 0;
+}
+.home-pic{
+  width: 100rem;
+  height: 42rem;
+}
 .home{
   color: crimson;
   text-align: center;
   font-weight: 900;
   font-size: 3rem;
-  border: darkcyan 5px solid;
-  margin: 10px;
-  height: 300px;
-  width: 116rem;
- 
-
- 
- 
+ display: flex;
+ justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
-
-
+.edit-delete{
+  display: flex;
+  justify-content: flex-end;
+}
+.count-edit{
+  display: flex;
+  justify-content: space-between;
+}
 
 
