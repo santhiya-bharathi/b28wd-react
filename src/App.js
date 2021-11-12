@@ -2,7 +2,7 @@
 import './App.css';
 
 import {useState} from "react";
-import { Switch, Route, Link, Redirect, useParams } from "react-router-dom";
+import { Switch, Route, Redirect, useParams } from "react-router-dom";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
@@ -13,6 +13,9 @@ import InfoIcon from '@mui/icons-material/Info';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+
 
 import { useHistory } from "react-router-dom";
 
@@ -63,27 +66,18 @@ export default function App() {
 }
 ];
 const [movies, setMovies] = useState(INITIAL_MOVIES);
+const history = useHistory();
+
   return (
     <div className="App">
-<ul className="ul-list">
-        <li>
-          <a href="/">✨ Welcome</a>
-        </li>
-        <li>
-          <Link to="/">🏡 Home</Link>
-        </li>
-        <li>
-          <Link to="/addmovies">🎬 AddMovies</Link>
-        </li>
-        <li>
-          <Link to="/movielist">🎬 Movielist</Link>
-        </li>
-        <li>
-            <Link to="/addcolor" >🟡 Addcolor</Link>
-          </li>
-      </ul>
-
-      <hr />
+       <AppBar position="static">
+       <Toolbar>
+       <Button varient="text" color="inherit" onClick={()=>history.push("/")}>Home</Button>
+       <Button varient="text" color="inherit" onClick={()=>history.push("/addmovies")}>AddMovies</Button>
+       <Button varient="text" color="inherit" onClick={()=>history.push("/movielist")}>Movielist</Button>
+       {/* <Button varient="text" color="inherit" onClick={()=>history.push("/addcolor")}>Addcolor</Button> */}
+       </Toolbar>
+       </AppBar>
 
       <Switch>
       
@@ -111,9 +105,9 @@ const [movies, setMovies] = useState(INITIAL_MOVIES);
         <MovieList movies={movies} setMovies={setMovies}/>
         </Route>
 
-        <Route path="/addcolor">
+        {/* <Route path="/addcolor">
         <AddColor/>
-        </Route>
+        </Route> */}
 
 
         <Route path="**">
@@ -320,7 +314,7 @@ const summaryStyles = {
         <IconButton onClick={()=>{console.log(id);
         // /movies/0
         history.push("/movielist/"+id);
-        }} color="primary" aria-label="more-info">
+        }} color="info" aria-label="more-info">
         <InfoIcon/>
 </IconButton>
 <IconButton onClick={()=>setShow(!show)} color="primary" aria-label="description">
@@ -345,31 +339,31 @@ const summaryStyles = {
 }
 
 
-function AddColor(){
-  const [color, setColor] = useState("pink");
-const styles = {backgroundColor: color};
-const [colors, setColors] = useState(["teal", "orange"]);
-  return(
-    <div>
-      <input
-      value={color}
-      onChange={(event)=>setColor(event.target.value)}
-      style={styles}
-      placeholder="enter a color"
-      />
+// function AddColor(){
+//   const [color, setColor] = useState("pink");
+// const styles = {backgroundColor: color};
+// const [colors, setColors] = useState(["teal", "orange"]);
+//   return(
+//     <div>
+//       <input
+//       value={color}
+//       onChange={(event)=>setColor(event.target.value)}
+//       style={styles}
+//       placeholder="enter a color"
+//       />
        
-      <button onClick={()=> setColors([...colors, color])}>Add color</button>
-      {colors.map((clr,index)=>(<ColorBox key={index} color={clr}/>))}
-    </div>
-  );
-}
+//       <button onClick={()=> setColors([...colors, color])}>Add color</button>
+//       {colors.map((clr,index)=>(<ColorBox key={index} color={clr}/>))}
+//     </div>
+//   );
+// }
 
-function ColorBox({color}){
-  const styles = {
-    backgroundColor:color,
-    height: "40px",
-    width:"600px",
-    marginTop:"10px",
-  };
-  return <div style = {styles}></div>
-}
+// function ColorBox({color}){
+//   const styles = {
+//     backgroundColor:color,
+//     height: "40px",
+//     width:"600px",
+//     marginTop:"10px",
+//   };
+//   return <div style = {styles}></div>
+// }

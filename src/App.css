@@ -3,7 +3,7 @@
 } */
 
 body{
- background: rgb(210, 231, 240);
+ 
   min-height: 100vh;
 }
 .not-found-name{
@@ -19,6 +19,7 @@ flex-direction: column;
 }
 .ul-list{
   list-style: none;
+  display: flex;
 }
 .in-con{
   display: flex;
@@ -70,7 +71,7 @@ margin: 15px;
     align-items: center;
 }
 .full-det:hover{
-  background-color: thistle;
+ 
   border: black solid 3px ;
 transform: scale(1.1);
 box-shadow: 5px 5px 5px rgb(46, 45, 45);
