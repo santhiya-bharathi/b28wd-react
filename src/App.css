@@ -61,7 +61,7 @@ margin: 15px;
 
 .details{
   text-align: center;
-  color: black;
+  
  font-weight: 500;
  padding: 10px;
 }
@@ -102,4 +102,21 @@ box-shadow: 5px 5px 5px rgb(46, 45, 45);
 
 }
 
-
+.game-box{
+  background-color: white;
+  color: black;
+  height: 6rem;
+  width: 6rem;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  cursor:pointer;
+  border: black 2px solid;
+}
+.board{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+width: min-content;
+}
